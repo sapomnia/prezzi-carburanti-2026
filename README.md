@@ -34,7 +34,7 @@ a livello nazionale e per operatore, calcolato a partire dagli open data del MIM
 | `03_elenco_operatori.py` | Elenco delle bandiere con numero di impianti → `output/elenco_operatori.csv` |
 | `04_costruisci_excel.py` | Calcola le medie e scrive `output/prezzi_medi_carburanti_S1_2026.xlsx` (fogli 1-3) |
 | `05_price_cap_province.py` | Quota provinciale delle bandiere con price cap → foglio 4 e `output/price_cap_province.csv` |
-| `06_grafico_operatori.py` | Dati del grafico interattivo (operatore, media delle altre bandiere, price cap) → `docs/grafico_prezzi_operatori.html` |
+| `06_grafico_operatori.py` | Dati del grafico interattivo, letti dall'Excel (fogli "Per operatore" e "Media nazionale") → `docs/grafico_prezzi_operatori.html` |
 | `07_giorni_sopra_cap.py` | Giorni in cui la media di ogni operatore ha superato il price cap → foglio 5 |
 | `08_impianti_sopra_cap.py` | Superamenti del price cap sui singoli distributori → fogli 6 e 7 |
 | `grafico/modello_grafico.html` | Modello HTML del grafico (palette mappine); lo script 06 vi inserisce i dati |
@@ -65,7 +65,7 @@ isole minori, restano sotto 2,80 €/l. L'elenco è in `output/prezzi_segnaposto
 
 `docs/grafico_prezzi_operatori.html` è un file autonomo (dati inclusi) per la newsletter mappine:
 prezzo medio giornaliero self per bandiera (default: Agip Eni, benzina), con menu per bandiera e carburante,
-la media delle altre bandiere (calcolata sui singoli impianti che non appartengono alla bandiera scelta) e il
+il prezzo medio nazionale (foglio "Media nazionale" dell'Excel) e il
 price cap (1,99 €/l benzina, 2,19 €/l diesel). L'asse verticale parte da 1,50 €/l, come indicato nel grafico.
 
 Il grafico è pubblicato con GitHub Pages (cartella `docs/` del ramo `main`) e si incorpora così:

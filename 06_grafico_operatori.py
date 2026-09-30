@@ -1,10 +1,12 @@
 """
 Grafico interattivo per la newsletter mappine: prezzo medio giornaliero self di benzina e diesel
-per operatore (stessi dati del foglio "Per operatore"), con
+per operatore, confrontato con
 
-- la media delle altre bandiere (tutti gli impianti che non appartengono all'operatore scelto),
-  calcolata sui prezzi dei singoli impianti e non come media delle medie: ogni impianto pesa uno;
+- il prezzo medio nazionale (media di tutti gli impianti stradali, compresi quelli dell'operatore scelto);
 - la linea del price cap (1,99 €/l benzina, 2,19 €/l diesel).
+
+I dati si leggono dal file Excel: foglio "Per operatore" per le serie degli operatori e foglio
+"Media nazionale" per il prezzo medio nazionale, così il grafico mostra esattamente i valori dell'Excel.
 
 Inserisce i dati nel modello grafico/modello_grafico.html e scrive docs/grafico_prezzi_operatori.html,
 un file autonomo pronto per GitHub Pages e per l'incorporamento con iframe.
@@ -13,7 +15,7 @@ import json
 
 import pandas as pd
 
-from comune import BASE, FILE_XLSX, ORDINE_OPERATORI, ORDINE_PRODOTTI, PRICE_CAP, carica_dati
+from comune import BASE, FILE_XLSX, ORDINE_OPERATORI, ORDINE_PRODOTTI, PRICE_CAP
 
 MODELLO = BASE / "grafico" / "modello_grafico.html"
 FILE_HTML = BASE / "docs" / "grafico_prezzi_operatori.html"
@@ -21,30 +23,19 @@ SEGNAPOSTO = "/*__DATI__*/null"
 
 
 def main():
-    d = carica_dati()
-    per_op = d.groupby(["prodotto", "operatore", "data"], observed=True)["prezzo"].agg(["sum", "count"])
-    totale = d.groupby(["prodotto", "data"], observed=True)["prezzo"].agg(["sum", "count"])
-
     giorni = pd.date_range("2026-01-01", "2026-06-30")
-    serie = {}
-    for prodotto in ORDINE_PRODOTTI:
-        tot = totale.loc[prodotto].reindex(giorni)
-        serie[prodotto] = {}
-        for op in ORDINE_OPERATORI:
-            s = per_op.loc[(prodotto, op)].reindex(giorni)
-            assert s.notna().all().all(), f"Giorni mancanti: {prodotto} {op}"
-            media = s["sum"] / s["count"]
-            altri = (tot["sum"] - s["sum"]) / (tot["count"] - s["count"])
-            serie[prodotto][op] = {"op": media.round(3).tolist(), "altri": altri.round(3).tolist()}
 
-    # Controllo: le medie per operatore coincidono con il foglio "Per operatore" dell'Excel
-    foglio = pd.read_excel(FILE_XLSX, sheet_name="Per operatore")
-    for r in foglio.sample(300, random_state=1).itertuples(index=False):
-        i = giorni.get_loc(pd.Timestamp(r[0]))
-        assert abs(serie[r[2]][r[1]]["op"][i] - r[3]) < 1e-9, f"Differenza con l'Excel: {r}"
+    nazionale = pd.read_excel(FILE_XLSX, sheet_name="Media nazionale").set_index("Data").reindex(giorni)
+    assert nazionale.notna().all().all(), "Giorni mancanti nel foglio Media nazionale"
+    naz = {p: nazionale[f"{p} (€/l)"].round(3).tolist() for p in ORDINE_PRODOTTI}
+
+    per_op = pd.read_excel(FILE_XLSX, sheet_name="Per operatore")
+    tab = per_op.pivot_table(index="Data", columns=["Prodotto", "Operatore"], values="Prezzo medio (€/l)").reindex(giorni)
+    serie = {p: {op: tab[(p, op)].round(3).tolist() for op in ORDINE_OPERATORI} for p in ORDINE_PRODOTTI}
+    assert tab.notna().all().all(), "Giorni mancanti nel foglio Per operatore"
 
     dati = {"date": [g.strftime("%Y-%m-%d") for g in giorni], "operatori": ORDINE_OPERATORI,
-            "prodotti": ORDINE_PRODOTTI, "priceCap": PRICE_CAP, "serie": serie}
+            "prodotti": ORDINE_PRODOTTI, "priceCap": PRICE_CAP, "serie": serie, "nazionale": naz}
     html = MODELLO.read_text(encoding="utf-8")
     assert SEGNAPOSTO in html
     FILE_HTML.parent.mkdir(exist_ok=True)

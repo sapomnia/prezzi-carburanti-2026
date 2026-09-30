@@ -38,7 +38,7 @@
   .legend span { display: inline-flex; align-items: center; gap: 7px; }
   .key { width: 22px; height: 0; border-top: 3px solid; display: inline-block; }
   .key.op { border-color: var(--terracotta); }
-  .key.altri { border-color: var(--slate); border-top-width: 2px; }
+  .key.naz { border-color: var(--slate); border-top-width: 2px; }
   .key.cap { border-color: var(--charcoal); border-top: 2px dashed var(--charcoal); }
 
   .asse { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
@@ -49,7 +49,7 @@
   .base { stroke: var(--muted); stroke-width: 1; }
   .line { fill: none; stroke-linejoin: round; stroke-linecap: round; }
   .line.op { stroke: var(--terracotta); stroke-width: 2.5; }
-  .line.altri { stroke: var(--slate); stroke-width: 2; }
+  .line.naz { stroke: var(--slate); stroke-width: 2; }
   .cap { stroke: var(--charcoal); stroke-width: 1.5; stroke-dasharray: 6 4; }
   .cap-label { font-size: 12px; font-weight: 700; fill: var(--charcoal); }
   .end-label { font-size: 12px; font-weight: 600; fill: var(--mid); }
@@ -80,7 +80,7 @@
 <body>
 <div class="wrap">
   <h1>Quanto costano benzina e diesel</h1>
-  <p class="sub">Prezzo medio giornaliero self service alle 8 del mattino negli impianti stradali, dal 1° gennaio al 30 giugno 2026, confrontato con la media delle altre bandiere e con il price cap annunciato da Eni, IP e Q8.</p>
+  <p class="sub">Prezzo medio giornaliero self service alle 8 del mattino negli impianti stradali, dal 1° gennaio al 30 giugno 2026, confrontato con il prezzo medio nazionale e con il price cap annunciato da Eni, IP e Q8.</p>
 
   <div class="controls">
     <div class="control">
@@ -95,7 +95,7 @@
 
   <div class="legend" aria-hidden="true">
     <span><i class="key op"></i><b id="leg-op"></b></span>
-    <span><i class="key altri"></i>Media delle altre bandiere</span>
+    <span><i class="key naz"></i>Prezzo medio nazionale</span>
     <span><i class="key cap"></i><span id="leg-cap"></span></span>
   </div>
   <p class="asse">Euro al litro · <strong>l'asse verticale parte da 1,50 €, non da zero</strong></p>
@@ -127,6 +127,7 @@ const date = DATI.date.map(s => { const [y, m, d] = s.split("-").map(Number); re
 const stato = { op: "Agip Eni", prod: "Benzina", idx: null };
 
 const $ = id => document.getElementById(id);
+const selezione = () => ({ op: DATI.serie[stato.prod][stato.op], naz: DATI.nazionale[stato.prod] });
 const el = (tag, attrs = {}, parent) => {
   const n = document.createElementNS(NS, tag);
   for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
@@ -174,7 +175,7 @@ function disegna() {
   svg.setAttribute("height", H);
   svg.replaceChildren();
 
-  const serie = DATI.serie[stato.prod][stato.op];
+  const serie = selezione();
   const cap = DATI.priceCap[stato.prod];
 
   // Griglia e asse y
@@ -209,24 +210,24 @@ function disegna() {
 
   // Linee
   const path = vals => vals.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join("");
-  el("path", { class: "line altri", d: path(serie.altri) }, svg);
+  el("path", { class: "line naz", d: path(serie.naz) }, svg);
   el("path", { class: "line op", d: path(serie.op) }, svg);
 
   // Etichette dirette a fine linea (solo su schermi larghi)
   if (!stretto) {
-    let y1 = y(serie.op[n - 1]), y2 = y(serie.altri[n - 1]);
-    const gap = 34;
+    let y1 = y(serie.op[n - 1]), y2 = y(serie.naz[n - 1]);
+    const gap = 48;
     if (Math.abs(y1 - y2) < gap) {
       const mid = (y1 + y2) / 2, s = y1 <= y2 ? -1 : 1;
       y1 = mid + s * gap / 2; y2 = mid - s * gap / 2;
     }
     etichetta(stato.op, serie.op[n - 1], m.l + iw + 8, y1, "end-label op");
-    etichetta("Altre bandiere", serie.altri[n - 1], m.l + iw + 8, y2, "end-label");
+    etichetta(["Prezzo medio", "nazionale"], serie.naz[n - 1], m.l + iw + 8, y2, "end-label");
   }
 
   // Livello del cursore
   geo.cross = el("line", { class: "cross", y1: m.t, y2: m.t + ih, visibility: "hidden" }, svg);
-  geo.dotAltri = el("circle", { class: "dot", r: 4.5, fill: "var(--slate)", visibility: "hidden" }, svg);
+  geo.dotNaz = el("circle", { class: "dot", r: 4.5, fill: "var(--slate)", visibility: "hidden" }, svg);
   geo.dotOp = el("circle", { class: "dot", r: 5, fill: "var(--terracotta)", visibility: "hidden" }, svg);
   const hit = el("rect", { x: m.l, y: 0, width: iw + 1, height: H, fill: "transparent" }, svg);
   hit.addEventListener("pointermove", e => {
@@ -239,8 +240,8 @@ function disegna() {
 }
 
 function etichetta(nome, valore, xx, yy, cls) {
-  const t = el("text", { class: cls, x: xx, y: yy - 2 }, svg);
-  t.textContent = nome;
+  const righe = [].concat(nome), top = yy - 2 - (righe.length - 1) * 14;
+  righe.forEach((r, k) => { el("text", { class: cls, x: xx, y: top + k * 14 }, svg).textContent = r; });
   const v = el("text", { class: "end-value", x: xx, y: yy + 12 }, svg);
   v.textContent = fmt3.format(valore) + " €";
 }
@@ -248,20 +249,20 @@ function etichetta(nome, valore, xx, yy, cls) {
 function mostra(i) {
   stato.idx = i;
   const { x, y, m, W, ih } = geo;
-  const s = DATI.serie[stato.prod][stato.op];
+  const s = selezione();
   const xx = x(i);
   geo.cross.setAttribute("x1", xx); geo.cross.setAttribute("x2", xx); geo.cross.setAttribute("visibility", "visible");
   geo.dotOp.setAttribute("cx", xx); geo.dotOp.setAttribute("cy", y(s.op[i])); geo.dotOp.setAttribute("visibility", "visible");
-  geo.dotAltri.setAttribute("cx", xx); geo.dotAltri.setAttribute("cy", y(s.altri[i])); geo.dotAltri.setAttribute("visibility", "visible");
+  geo.dotNaz.setAttribute("cx", xx); geo.dotNaz.setAttribute("cy", y(s.naz[i])); geo.dotNaz.setAttribute("visibility", "visible");
 
-  const diff = (s.op[i] - s.altri[i]) * 100;
+  const diff = (s.op[i] - s.naz[i]) * 100;
   tip.replaceChildren();
   const d = document.createElement("div"); d.className = "d"; d.textContent = dataLunga(i); tip.appendChild(d);
   riga(s.op[i], stato.op, "var(--terracotta)");
-  riga(s.altri[i], "Altre bandiere", "var(--slate)");
+  riga(s.naz[i], "Prezzo medio nazionale", "var(--slate)");
   const df = document.createElement("div"); df.className = "diff";
-  df.textContent = Math.abs(diff) < 0.05 ? "Allineato alle altre bandiere"
-    : `${fmt1.format(diff)} centesimi rispetto alle altre bandiere`;
+  df.textContent = Math.abs(diff) < 0.05 ? "Allineato al prezzo medio nazionale"
+    : `${fmt1.format(diff)} centesimi rispetto al prezzo medio nazionale`;
   tip.appendChild(df);
 
   const scala = chart.clientWidth / W;
@@ -270,7 +271,7 @@ function mostra(i) {
   if (left + tw > cw) left = xx * scala - tw - 14;
   tip.style.left = Math.max(0, left) + "px";
   // In verticale il tooltip sta dalla parte opposta rispetto ai punti evidenziati
-  const yPunti = Math.min(y(s.op[i]), y(s.altri[i])) * scala;
+  const yPunti = Math.min(y(s.op[i]), y(s.naz[i])) * scala;
   const th = tip.offsetHeight;
   tip.style.top = (yPunti - m.t * scala > th + 16 ? m.t * scala : (m.t + ih) * scala - th - 4) + "px";
   tip.style.opacity = 1;
@@ -287,7 +288,7 @@ function riga(valore, nome, colore) {
 function nascondi() {
   stato.idx = null;
   tip.style.opacity = 0;
-  ["cross", "dotOp", "dotAltri"].forEach(k => geo[k] && geo[k].setAttribute("visibility", "hidden"));
+  ["cross", "dotOp", "dotNaz"].forEach(k => geo[k] && geo[k].setAttribute("visibility", "hidden"));
 }
 
 svg.addEventListener("keydown", e => {
@@ -312,7 +313,7 @@ function aggiorna() {
   const cap = DATI.priceCap[stato.prod];
   $("leg-op").textContent = stato.op;
   $("leg-cap").textContent = `Price cap ${fmt2.format(cap)} €/l`;
-  const s = DATI.serie[stato.prod][stato.op], n = date.length;
+  const s = selezione(), n = date.length;
   svg.setAttribute("aria-label", `${stato.prod}, ${stato.op}: prezzo medio self giornaliero dal 1 gennaio al 30 giugno 2026`);
   $("svg-desc").textContent = `${stato.op}: ${fmt3.format(s.op[0])} euro al litro il 1 gennaio, ${fmt3.format(s.op[n - 1])} il 30 giugno, massimo ${fmt3.format(Math.max(...s.op))}. Price cap ${fmt2.format(cap)} euro. Usa le frecce per scorrere i giorni.`;
   disegna();
