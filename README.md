@@ -67,10 +67,10 @@ prezzo medio giornaliero self per bandiera (default: Agip Eni, benzina), con men
 la media delle altre bandiere (calcolata sui singoli impianti che non appartengono alla bandiera scelta) e il
 price cap (1,99 €/l benzina, 2,19 €/l diesel). L'asse verticale parte da 1,50 €/l, come indicato nel grafico.
 
-Con GitHub Pages attivo sulla cartella `docs/` del ramo principale si incorpora così:
+Il grafico è pubblicato con GitHub Pages (cartella `docs/` del ramo `main`) e si incorpora così:
 
 ```html
-<iframe src="https://UTENTE.github.io/REPOSITORY/grafico_prezzi_operatori.html"
+<iframe src="https://sapomnia.github.io/prezzi-carburanti-2026/grafico_prezzi_operatori.html"
         title="Prezzi di benzina e diesel per bandiera" width="100%" height="900"
         style="border:0" loading="lazy"></iframe>
 ```
