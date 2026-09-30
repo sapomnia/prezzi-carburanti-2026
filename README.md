@@ -39,6 +39,7 @@ a livello nazionale e per operatore, calcolato a partire dagli open data del MIM
 | `08_impianti_sopra_cap.py` | Superamenti del price cap sui singoli distributori → fogli 6 e 7 |
 | `grafico/modello_grafico.html` | Modello HTML del grafico (palette mappine); lo script 06 vi inserisce i dati |
 | `riferimenti/` | Elenchi Istat di comuni e province (codici aggiornati a febbraio 2026) |
+| `VALUTAZIONE_QUALITA.md` | Valutazione del lavoro svolto (codice e output), effettuata con Gemini 3.8 Flash su Antigravity |
 
 Il file Excel ha sette fogli:
 - **Media nazionale**: Data, Benzina (€/l), Diesel (€/l);
