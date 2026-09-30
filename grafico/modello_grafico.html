@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prezzi carburanti per bandiera</title>
+<style>
+  :root {
+    --cream: #F9F9F2; --sand: #EDE8E0; --terracotta: #C4553A; --rust: #A03D25;
+    --slate: #56708A; --charcoal: #2C2420; --mid: #5A4A42; --muted: #8C7B72; --border: #D8CEBF;
+    --grid: #E4DCD1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--cream); color: var(--charcoal); }
+  body { font-family: Georgia, "Times New Roman", serif; font-size: 15px; line-height: 1.45; }
+  svg text { font-family: Georgia, "Times New Roman", serif; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 20px 16px 16px; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(22px, 4.2vw, 30px); line-height: 1.15; margin: 0 0 8px; }
+  .sub { color: var(--mid); margin: 0 0 16px; max-width: 64ch; }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: flex-end; margin-bottom: 14px; }
+  .control label, .control .lbl { display: block; font-size: 12px; font-weight: 600; color: var(--mid); margin-bottom: 4px; }
+  select {
+    font: inherit; font-weight: 600; color: var(--charcoal); background: #fff; border: 1px solid var(--border);
+    border-radius: 6px; padding: 7px 34px 7px 10px; min-width: 210px; cursor: pointer; appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--mid) 50%), linear-gradient(135deg, var(--mid) 50%, transparent 50%);
+    background-position: calc(100% - 17px) 55%, calc(100% - 12px) 55%; background-size: 5px 5px; background-repeat: no-repeat;
+  }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: #fff; }
+  .seg button {
+    font: inherit; font-weight: 600; border: 0; background: transparent; color: var(--mid); padding: 7px 16px; cursor: pointer;
+  }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button[aria-checked="true"] { background: var(--charcoal); color: var(--cream); }
+  select:focus-visible, .seg button:focus-visible, svg:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 2px; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--mid); margin-bottom: 4px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .key { width: 22px; height: 0; border-top: 3px solid; display: inline-block; }
+  .key.op { border-color: var(--terracotta); }
+  .key.altri { border-color: var(--slate); border-top-width: 2px; }
+  .key.cap { border-color: var(--charcoal); border-top: 2px dashed var(--charcoal); }
+
+  .asse { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+  .chart { position: relative; }
+  svg { display: block; width: 100%; overflow: visible; }
+  .tick text { font-size: 12px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+  .grid line { stroke: var(--grid); stroke-width: 1; }
+  .base { stroke: var(--muted); stroke-width: 1; }
+  .line { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+  .line.op { stroke: var(--terracotta); stroke-width: 2.5; }
+  .line.altri { stroke: var(--slate); stroke-width: 2; }
+  .cap { stroke: var(--charcoal); stroke-width: 1.5; stroke-dasharray: 6 4; }
+  .cap-label { font-size: 12px; font-weight: 700; fill: var(--charcoal); }
+  .end-label { font-size: 12px; font-weight: 600; fill: var(--mid); }
+  .end-label.op { font-weight: 700; fill: var(--charcoal); }
+  .end-value { font-size: 12px; font-weight: 400; fill: var(--mid); font-variant-numeric: tabular-nums; }
+  .cross { stroke: var(--mid); stroke-width: 1; }
+  .dot { stroke: var(--cream); stroke-width: 2; }
+
+  .tip {
+    position: absolute; pointer-events: none; background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(44,36,32,.12); padding: 9px 11px; font-size: 13px; min-width: 200px; opacity: 0;
+    transition: opacity .12s;
+  }
+  .tip .d { font-weight: 700; margin-bottom: 5px; }
+  .tip .r { display: grid; grid-template-columns: 18px auto 1fr; align-items: center; gap: 6px; }
+  .tip .r .v { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tip .r .n { color: var(--mid); }
+  .tip .r .k { width: 14px; border-top: 3px solid; }
+  .tip .diff { margin-top: 5px; padding-top: 5px; border-top: 1px solid var(--sand); color: var(--mid); }
+
+
+  footer { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+  footer p { margin: 0 0 4px; }
+  footer a { color: var(--terracotta); font-weight: 700; text-decoration: none; }
+  footer a:hover, footer a:focus-visible { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Quanto costano benzina e diesel</h1>
+  <p class="sub">Prezzo medio giornaliero self service alle 8 del mattino negli impianti stradali, dal 1° gennaio al 30 giugno 2026, confrontato con la media delle altre bandiere e con il price cap annunciato da Eni, IP e Q8.</p>
+
+  <div class="controls">
+    <div class="control">
+      <label for="sel-op">Bandiera</label>
+      <select id="sel-op"></select>
+    </div>
+    <div class="control">
+      <span class="lbl" id="lbl-prod">Carburante</span>
+      <div class="seg" role="radiogroup" aria-labelledby="lbl-prod" id="seg-prod"></div>
+    </div>
+  </div>
+
+  <div class="legend" aria-hidden="true">
+    <span><i class="key op"></i><b id="leg-op"></b></span>
+    <span><i class="key altri"></i>Media delle altre bandiere</span>
+    <span><i class="key cap"></i><span id="leg-cap"></span></span>
+  </div>
+  <p class="asse">Euro al litro · <strong>l'asse verticale parte da 1,50 €, non da zero</strong></p>
+
+  <div class="chart" id="chart">
+    <svg id="svg" tabindex="0" role="img" aria-describedby="svg-desc"></svg>
+    <p id="svg-desc" hidden></p>
+    <div class="tip" id="tip" aria-hidden="true"></div>
+  </div>
+
+  <footer>
+    <p>Fonte: elaborazione <a href="https://www.mappine.it" target="_blank" rel="noopener">mappine</a> su dati MIMIT – Osservaprezzi carburanti.</p>
+    <p>Media semplice dei prezzi self comunicati dagli impianti stradali (esclusi gli autostradali) per benzina e gasolio non speciali; scartati i prezzi fuori dall'intervallo 1–3 €/l. Grande distribuzione: Conad, Coop, Enercoop, Auchan, Iper Station, Carrefour. Altri operatori: tutte le altre bandiere.</p>
+  </footer>
+</div>
+
+<script>
+const DATI = /*__DATI__*/null;
+
+const Y_MIN = 1.5, Y_MAX = 2.3, Y_STEP = 0.1;
+const MESI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"];
+const MESI_LUNGHI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
+const fmt3 = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+const fmt2 = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmt1 = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: "exceptZero" });
+const NS = "http://www.w3.org/2000/svg";
+
+const date = DATI.date.map(s => { const [y, m, d] = s.split("-").map(Number); return { y, m: m - 1, d }; });
+const stato = { op: "Agip Eni", prod: "Benzina", idx: null };
+
+const $ = id => document.getElementById(id);
+const el = (tag, attrs = {}, parent) => {
+  const n = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (parent) parent.appendChild(n);
+  return n;
+};
+const dataLunga = i => `${date[i].d} ${MESI_LUNGHI[date[i].m]} ${date[i].y}`;
+
+// Controlli
+const sel = $("sel-op");
+DATI.operatori.forEach(op => { const o = document.createElement("option"); o.value = op; o.textContent = op; sel.appendChild(o); });
+sel.value = stato.op;
+sel.addEventListener("change", () => { stato.op = sel.value; aggiorna(); });
+
+const seg = $("seg-prod");
+DATI.prodotti.forEach(p => {
+  const b = document.createElement("button");
+  b.type = "button"; b.setAttribute("role", "radio"); b.textContent = p; b.dataset.prod = p;
+  b.addEventListener("click", () => { stato.prod = p; aggiorna(); });
+  b.addEventListener("keydown", e => {
+    if (!["ArrowLeft", "ArrowRight"].includes(e.key)) return;
+    e.preventDefault();
+    const i = (DATI.prodotti.indexOf(stato.prod) + 1) % DATI.prodotti.length;
+    stato.prod = DATI.prodotti[i]; aggiorna(); seg.querySelector(`[data-prod="${stato.prod}"]`).focus();
+  });
+  seg.appendChild(b);
+});
+
+// Grafico
+const svg = $("svg"), tip = $("tip"), chart = $("chart");
+let geo = null;
+
+function disegna() {
+  const W = chart.clientWidth;
+  const stretto = W < 520;
+  const H = stretto ? 300 : 380;
+  const m = { t: 14, r: stretto ? 12 : 104, b: 28, l: 38 };
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const n = date.length;
+  const x = i => m.l + (i / (n - 1)) * iw;
+  const y = v => m.t + (1 - (v - Y_MIN) / (Y_MAX - Y_MIN)) * ih;
+  geo = { W, H, m, iw, ih, x, y, n, stretto };
+
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("height", H);
+  svg.replaceChildren();
+
+  const serie = DATI.serie[stato.prod][stato.op];
+  const cap = DATI.priceCap[stato.prod];
+
+  // Griglia e asse y
+  const gGrid = el("g", { class: "grid" }, svg), gTick = el("g", { class: "tick" }, svg);
+  for (let v = Y_MIN; v <= Y_MAX + 1e-9; v += Y_STEP) {
+    const yy = Math.round(y(v)) + 0.5;
+    if (v > Y_MIN + 1e-9) el("line", { x1: m.l, x2: m.l + iw, y1: yy, y2: yy }, gGrid);
+    const t = el("text", { x: m.l - 8, y: yy + 4, "text-anchor": "end" }, gTick);
+    t.textContent = fmt2.format(v);
+  }
+  // Linea di base a 1,50 con segno di interruzione dell'asse (non parte da zero)
+  const yb = Math.round(y(Y_MIN)) + 0.5;
+  el("line", { class: "base", x1: m.l, x2: m.l + iw, y1: yb, y2: yb }, svg);
+  const brk = el("g", { stroke: "var(--muted)", "stroke-width": 1.2 }, svg);
+  el("line", { x1: m.l - 5, y1: yb + 7, x2: m.l + 3, y2: yb + 1 }, brk);
+  el("line", { x1: m.l - 5, y1: yb + 11, x2: m.l + 3, y2: yb + 5 }, brk);
+
+  // Asse x: primo giorno di ogni mese
+  date.forEach((d, i) => {
+    if (d.d !== 1) return;
+    const xx = x(i);
+    el("line", { x1: xx, x2: xx, y1: yb, y2: yb + 4, stroke: "var(--muted)" }, svg);
+    const t = el("text", { x: xx, y: yb + 18, "text-anchor": i === 0 ? "start" : "middle" }, gTick);
+    t.textContent = MESI[d.m];
+  });
+
+  // Price cap
+  const yc = y(cap);
+  el("line", { class: "cap", x1: m.l, x2: m.l + iw, y1: yc, y2: yc }, svg);
+  const tc = el("text", { class: "cap-label", x: m.l + 6, y: yc - 7 }, svg);
+  tc.textContent = `Price cap ${fmt2.format(cap)} €/l`;
+
+  // Linee
+  const path = vals => vals.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join("");
+  el("path", { class: "line altri", d: path(serie.altri) }, svg);
+  el("path", { class: "line op", d: path(serie.op) }, svg);
+
+  // Etichette dirette a fine linea (solo su schermi larghi)
+  if (!stretto) {
+    let y1 = y(serie.op[n - 1]), y2 = y(serie.altri[n - 1]);
+    const gap = 34;
+    if (Math.abs(y1 - y2) < gap) {
+      const mid = (y1 + y2) / 2, s = y1 <= y2 ? -1 : 1;
+      y1 = mid + s * gap / 2; y2 = mid - s * gap / 2;
+    }
+    etichetta(stato.op, serie.op[n - 1], m.l + iw + 8, y1, "end-label op");
+    etichetta("Altre bandiere", serie.altri[n - 1], m.l + iw + 8, y2, "end-label");
+  }
+
+  // Livello del cursore
+  geo.cross = el("line", { class: "cross", y1: m.t, y2: m.t + ih, visibility: "hidden" }, svg);
+  geo.dotAltri = el("circle", { class: "dot", r: 4.5, fill: "var(--slate)", visibility: "hidden" }, svg);
+  geo.dotOp = el("circle", { class: "dot", r: 5, fill: "var(--terracotta)", visibility: "hidden" }, svg);
+  const hit = el("rect", { x: m.l, y: 0, width: iw + 1, height: H, fill: "transparent" }, svg);
+  hit.addEventListener("pointermove", e => {
+    const r = svg.getBoundingClientRect();
+    const px = (e.clientX - r.left) * (W / r.width);
+    mostra(Math.max(0, Math.min(n - 1, Math.round((px - m.l) / iw * (n - 1)))));
+  });
+  hit.addEventListener("pointerleave", nascondi);
+  if (stato.idx !== null) mostra(stato.idx);
+}
+
+function etichetta(nome, valore, xx, yy, cls) {
+  const t = el("text", { class: cls, x: xx, y: yy - 2 }, svg);
+  t.textContent = nome;
+  const v = el("text", { class: "end-value", x: xx, y: yy + 12 }, svg);
+  v.textContent = fmt3.format(valore) + " €";
+}
+
+function mostra(i) {
+  stato.idx = i;
+  const { x, y, m, W, ih } = geo;
+  const s = DATI.serie[stato.prod][stato.op];
+  const xx = x(i);
+  geo.cross.setAttribute("x1", xx); geo.cross.setAttribute("x2", xx); geo.cross.setAttribute("visibility", "visible");
+  geo.dotOp.setAttribute("cx", xx); geo.dotOp.setAttribute("cy", y(s.op[i])); geo.dotOp.setAttribute("visibility", "visible");
+  geo.dotAltri.setAttribute("cx", xx); geo.dotAltri.setAttribute("cy", y(s.altri[i])); geo.dotAltri.setAttribute("visibility", "visible");
+
+  const diff = (s.op[i] - s.altri[i]) * 100;
+  tip.replaceChildren();
+  const d = document.createElement("div"); d.className = "d"; d.textContent = dataLunga(i); tip.appendChild(d);
+  riga(s.op[i], stato.op, "var(--terracotta)");
+  riga(s.altri[i], "Altre bandiere", "var(--slate)");
+  const df = document.createElement("div"); df.className = "diff";
+  df.textContent = Math.abs(diff) < 0.05 ? "Allineato alle altre bandiere"
+    : `${fmt1.format(diff)} centesimi rispetto alle altre bandiere`;
+  tip.appendChild(df);
+
+  const scala = chart.clientWidth / W;
+  const tw = tip.offsetWidth, cw = chart.clientWidth;
+  let left = xx * scala + 14;
+  if (left + tw > cw) left = xx * scala - tw - 14;
+  tip.style.left = Math.max(0, left) + "px";
+  // In verticale il tooltip sta dalla parte opposta rispetto ai punti evidenziati
+  const yPunti = Math.min(y(s.op[i]), y(s.altri[i])) * scala;
+  const th = tip.offsetHeight;
+  tip.style.top = (yPunti - m.t * scala > th + 16 ? m.t * scala : (m.t + ih) * scala - th - 4) + "px";
+  tip.style.opacity = 1;
+}
+
+function riga(valore, nome, colore) {
+  const r = document.createElement("div"); r.className = "r";
+  const k = document.createElement("i"); k.className = "k"; k.style.borderColor = colore;
+  const v = document.createElement("span"); v.className = "v"; v.textContent = fmt3.format(valore) + " €/l";
+  const n = document.createElement("span"); n.className = "n"; n.textContent = nome;
+  r.append(k, v, n); tip.appendChild(r);
+}
+
+function nascondi() {
+  stato.idx = null;
+  tip.style.opacity = 0;
+  ["cross", "dotOp", "dotAltri"].forEach(k => geo[k] && geo[k].setAttribute("visibility", "hidden"));
+}
+
+svg.addEventListener("keydown", e => {
+  const passi = { ArrowRight: 1, ArrowLeft: -1, PageUp: 30, PageDown: -30 };
+  if (e.key === "Escape") return nascondi();
+  if (!(e.key in passi) && e.key !== "Home" && e.key !== "End") return;
+  e.preventDefault();
+  let i = stato.idx ?? date.length - 1;
+  if (e.key === "Home") i = 0; else if (e.key === "End") i = date.length - 1; else i += passi[e.key];
+  mostra(Math.max(0, Math.min(date.length - 1, i)));
+});
+svg.addEventListener("focus", () => { if (stato.idx === null) mostra(date.length - 1); });
+svg.addEventListener("blur", nascondi);
+
+
+function aggiorna() {
+  sel.value = stato.op;
+  seg.querySelectorAll("button").forEach(b => {
+    const on = b.dataset.prod === stato.prod;
+    b.setAttribute("aria-checked", on); b.tabIndex = on ? 0 : -1;
+  });
+  const cap = DATI.priceCap[stato.prod];
+  $("leg-op").textContent = stato.op;
+  $("leg-cap").textContent = `Price cap ${fmt2.format(cap)} €/l`;
+  const s = DATI.serie[stato.prod][stato.op], n = date.length;
+  svg.setAttribute("aria-label", `${stato.prod}, ${stato.op}: prezzo medio self giornaliero dal 1 gennaio al 30 giugno 2026`);
+  $("svg-desc").textContent = `${stato.op}: ${fmt3.format(s.op[0])} euro al litro il 1 gennaio, ${fmt3.format(s.op[n - 1])} il 30 giugno, massimo ${fmt3.format(Math.max(...s.op))}. Price cap ${fmt2.format(cap)} euro. Usa le frecce per scorrere i giorni.`;
+  disegna();
+  inviaAltezza();
+}
+
+// Per l'iframe: comunica l'altezza alla pagina che lo ospita (se la pagina la ascolta)
+function inviaAltezza() {
+  if (window.parent !== window) window.parent.postMessage({ mappineGrafico: "prezzi-operatori", altezza: document.documentElement.scrollHeight }, "*");
+}
+
+new ResizeObserver(() => { disegna(); inviaAltezza(); }).observe(chart);
+aggiorna();
+</script>
+</body>
+</html>

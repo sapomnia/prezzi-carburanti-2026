@@ -1,0 +1,381 @@
+data,idImpianto,bandiera,prodotto,isSelf,prezzo,dtComu,operatore
+2026-01-01,54420,Pompe Bianche,Benzina,1,2.999,2025-12-25 09:28:03,Pompe Bianche
+2026-01-01,54420,Pompe Bianche,Diesel,1,2.999,2025-12-25 09:28:03,Pompe Bianche
+2026-01-02,39342,Pompe Bianche,Benzina,1,2.999,2026-01-01 23:47:47,Pompe Bianche
+2026-01-02,39342,Pompe Bianche,Diesel,1,2.999,2026-01-01 23:47:47,Pompe Bianche
+2026-01-03,13829,Api-Ip,Benzina,1,2.999,2026-01-02 23:56:01,Api-Ip
+2026-01-03,13829,Api-Ip,Diesel,1,2.999,2026-01-02 23:56:01,Api-Ip
+2026-01-03,13833,Q8,Benzina,1,2.999,2026-01-02 23:56:04,Q8
+2026-01-03,13833,Q8,Diesel,1,2.999,2026-01-02 23:56:04,Q8
+2026-01-04,24344,Pompe Bianche,Benzina,1,2.999,2026-01-04 00:01:53,Pompe Bianche
+2026-01-04,24344,Pompe Bianche,Diesel,1,2.999,2026-01-04 00:01:53,Pompe Bianche
+2026-01-04,48837,Esso,Benzina,1,2.999,2026-01-04 00:01:50,Esso
+2026-01-04,48837,Esso,Diesel,1,2.999,2026-01-04 00:01:50,Esso
+2026-01-04,50679,Q8,Benzina,1,2.999,2026-01-04 00:00:41,Q8
+2026-01-04,50679,Q8,Diesel,1,2.999,2026-01-04 00:00:41,Q8
+2026-01-05,24344,Pompe Bianche,Benzina,1,2.999,2026-01-04 00:01:53,Pompe Bianche
+2026-01-05,24344,Pompe Bianche,Diesel,1,2.999,2026-01-04 00:01:53,Pompe Bianche
+2026-01-05,44935,Smaf,Benzina,1,2.999,2026-01-04 23:29:25,Altri operatori
+2026-01-05,44935,Smaf,Diesel,1,2.999,2026-01-04 23:29:25,Altri operatori
+2026-01-05,48837,Esso,Benzina,1,2.999,2026-01-04 00:01:50,Esso
+2026-01-05,48837,Esso,Diesel,1,2.999,2026-01-04 00:01:50,Esso
+2026-01-05,48878,Smaf,Benzina,1,2.999,2026-01-04 23:29:28,Altri operatori
+2026-01-05,48878,Smaf,Diesel,1,2.999,2026-01-04 23:29:28,Altri operatori
+2026-01-05,50679,Q8,Benzina,1,2.999,2026-01-04 00:00:41,Q8
+2026-01-05,50679,Q8,Diesel,1,2.999,2026-01-04 00:00:41,Q8
+2026-01-05,53990,Smaf,Benzina,1,2.999,2026-01-04 23:29:34,Altri operatori
+2026-01-05,53990,Smaf,Diesel,1,2.999,2026-01-04 23:29:34,Altri operatori
+2026-01-05,55763,Smaf,Benzina,1,2.999,2026-01-04 23:29:31,Altri operatori
+2026-01-05,55763,Smaf,Diesel,1,2.999,2026-01-04 23:29:31,Altri operatori
+2026-01-05,58467,Smaf,Benzina,1,2.999,2026-01-04 23:29:37,Altri operatori
+2026-01-05,58467,Smaf,Diesel,1,2.999,2026-01-04 23:29:37,Altri operatori
+2026-01-05,58471,Smaf,Benzina,1,2.999,2026-01-04 23:29:40,Altri operatori
+2026-01-05,58471,Smaf,Diesel,1,2.999,2026-01-04 23:29:40,Altri operatori
+2026-01-05,62047,Smaf,Benzina,1,2.999,2026-01-04 23:29:19,Altri operatori
+2026-01-05,62047,Smaf,Diesel,1,2.999,2026-01-04 23:29:19,Altri operatori
+2026-01-05,62048,Smaf,Benzina,1,2.999,2026-01-04 23:29:22,Altri operatori
+2026-01-05,62048,Smaf,Diesel,1,2.999,2026-01-04 23:29:22,Altri operatori
+2026-01-06,24344,Pompe Bianche,Benzina,1,2.999,2026-01-04 00:01:53,Pompe Bianche
+2026-01-06,24344,Pompe Bianche,Diesel,1,2.999,2026-01-04 00:01:53,Pompe Bianche
+2026-01-06,40685,Api-Ip,Benzina,1,2.999,2026-01-05 22:29:39,Api-Ip
+2026-01-06,40685,Api-Ip,Diesel,1,2.999,2026-01-05 22:29:39,Api-Ip
+2026-01-06,48837,Esso,Benzina,1,2.999,2026-01-04 00:01:50,Esso
+2026-01-06,48837,Esso,Diesel,1,2.999,2026-01-04 00:01:50,Esso
+2026-01-06,50679,Q8,Benzina,1,2.999,2026-01-04 00:00:41,Q8
+2026-01-06,50679,Q8,Diesel,1,2.999,2026-01-04 00:00:41,Q8
+2026-01-08,58886,Smaf,Benzina,1,2.999,2026-01-07 22:19:02,Altri operatori
+2026-01-08,58886,Smaf,Diesel,1,2.999,2026-01-07 22:19:02,Altri operatori
+2026-01-10,50252,Q8,Benzina,1,2.999,2026-01-09 21:06:56,Q8
+2026-01-10,50252,Q8,Diesel,1,2.999,2026-01-09 21:06:56,Q8
+2026-01-10,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-10,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-10,54420,Pompe Bianche,Benzina,1,2.999,2026-01-09 21:06:25,Pompe Bianche
+2026-01-10,54420,Pompe Bianche,Diesel,1,2.999,2026-01-09 21:06:25,Pompe Bianche
+2026-01-11,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-11,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-12,15723,Pompe Bianche,Benzina,1,2.999,2026-01-11 23:50:14,Pompe Bianche
+2026-01-12,15723,Pompe Bianche,Diesel,1,2.999,2026-01-11 23:50:14,Pompe Bianche
+2026-01-12,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-12,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-13,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-13,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-13,54234,Pompe Bianche,Benzina,1,2.999,2026-01-12 21:52:47,Pompe Bianche
+2026-01-13,54234,Pompe Bianche,Diesel,1,2.999,2026-01-12 21:52:47,Pompe Bianche
+2026-01-14,24344,Pompe Bianche,Benzina,1,2.999,2026-01-13 23:12:13,Pompe Bianche
+2026-01-14,24344,Pompe Bianche,Diesel,1,2.999,2026-01-13 23:12:13,Pompe Bianche
+2026-01-14,48837,Esso,Benzina,1,2.999,2026-01-13 23:12:10,Esso
+2026-01-14,48837,Esso,Diesel,1,2.999,2026-01-13 23:12:10,Esso
+2026-01-14,49479,Ecoil,Benzina,1,2.999,2026-01-13 23:13:54,Altri operatori
+2026-01-14,49479,Ecoil,Diesel,1,2.999,2026-01-13 23:13:54,Altri operatori
+2026-01-14,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-14,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-14,54234,Pompe Bianche,Benzina,1,2.999,2026-01-12 21:52:47,Pompe Bianche
+2026-01-14,54234,Pompe Bianche,Diesel,1,2.999,2026-01-12 21:52:47,Pompe Bianche
+2026-01-15,21452,Tamoil,Benzina,1,2.999,2026-01-14 21:48:05,Tamoil
+2026-01-15,21452,Tamoil,Diesel,1,2.999,2026-01-14 21:48:05,Tamoil
+2026-01-15,48885,Ego,Benzina,1,2.999,2026-01-14 21:48:19,Altri operatori
+2026-01-15,48885,Ego,Diesel,1,2.999,2026-01-14 21:48:19,Altri operatori
+2026-01-15,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-15,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-16,16401,Pompe Bianche,Benzina,1,2.999,2026-01-15 22:52:17,Pompe Bianche
+2026-01-16,16401,Pompe Bianche,Diesel,1,2.999,2026-01-15 22:52:17,Pompe Bianche
+2026-01-16,50254,Q8,Benzina,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-16,50254,Q8,Diesel,1,2.999,2026-01-09 21:06:59,Q8
+2026-01-18,54420,Pompe Bianche,Benzina,1,2.999,2026-01-17 19:14:48,Pompe Bianche
+2026-01-18,54420,Pompe Bianche,Diesel,1,2.999,2026-01-17 19:14:48,Pompe Bianche
+2026-01-19,39342,Pompe Bianche,Benzina,1,2.999,2026-01-18 22:04:37,Pompe Bianche
+2026-01-19,39342,Pompe Bianche,Diesel,1,2.999,2026-01-18 22:04:37,Pompe Bianche
+2026-01-23,38157,Costantin,Benzina,1,2.999,2026-01-22 22:48:24,Altri operatori
+2026-01-23,38157,Costantin,Diesel,1,2.999,2026-01-22 22:48:24,Altri operatori
+2026-01-23,40685,Api-Ip,Benzina,1,2.999,2026-01-22 22:47:07,Api-Ip
+2026-01-23,40685,Api-Ip,Diesel,1,2.999,2026-01-22 22:47:07,Api-Ip
+2026-01-23,48885,Ego,Benzina,1,2.999,2026-01-22 22:47:54,Altri operatori
+2026-01-23,48885,Ego,Diesel,1,2.999,2026-01-22 22:47:54,Altri operatori
+2026-01-24,48885,Ego,Benzina,1,2.999,2026-01-22 22:47:54,Altri operatori
+2026-01-24,48885,Ego,Diesel,1,2.999,2026-01-22 22:47:54,Altri operatori
+2026-01-25,48885,Ego,Benzina,1,2.999,2026-01-22 22:47:54,Altri operatori
+2026-01-25,48885,Ego,Diesel,1,2.999,2026-01-22 22:47:54,Altri operatori
+2026-01-27,13829,Api-Ip,Benzina,1,2.999,2026-01-27 00:10:01,Api-Ip
+2026-01-27,13829,Api-Ip,Diesel,1,2.999,2026-01-27 00:10:01,Api-Ip
+2026-01-27,13833,Q8,Benzina,1,2.999,2026-01-27 00:10:04,Q8
+2026-01-27,13833,Q8,Diesel,1,2.999,2026-01-27 00:10:04,Q8
+2026-01-27,32006,Api-Ip,Benzina,1,2.999,2026-01-27 00:10:32,Api-Ip
+2026-01-27,32006,Api-Ip,Diesel,1,2.999,2026-01-27 00:10:32,Api-Ip
+2026-01-27,32007,Api-Ip,Benzina,1,2.999,2026-01-27 00:10:30,Api-Ip
+2026-01-27,32007,Api-Ip,Diesel,1,2.999,2026-01-27 00:10:30,Api-Ip
+2026-01-28,13829,Api-Ip,Benzina,1,2.999,2026-01-27 00:10:01,Api-Ip
+2026-01-28,13829,Api-Ip,Diesel,1,2.999,2026-01-27 00:10:01,Api-Ip
+2026-01-28,13833,Q8,Benzina,1,2.999,2026-01-27 00:10:04,Q8
+2026-01-28,13833,Q8,Diesel,1,2.999,2026-01-27 00:10:04,Q8
+2026-01-30,24344,Pompe Bianche,Benzina,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-01-30,24344,Pompe Bianche,Diesel,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-01-30,48837,Esso,Benzina,1,2.999,2026-01-29 22:58:15,Esso
+2026-01-30,48837,Esso,Diesel,1,2.999,2026-01-29 22:58:15,Esso
+2026-01-30,49479,Ecoil,Benzina,1,2.999,2026-01-29 22:57:51,Altri operatori
+2026-01-30,49479,Ecoil,Diesel,1,2.999,2026-01-29 22:57:51,Altri operatori
+2026-01-31,24344,Pompe Bianche,Benzina,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-01-31,24344,Pompe Bianche,Diesel,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-01-31,48837,Esso,Benzina,1,2.999,2026-01-29 22:58:15,Esso
+2026-01-31,48837,Esso,Diesel,1,2.999,2026-01-29 22:58:15,Esso
+2026-01-31,49479,Ecoil,Benzina,1,2.999,2026-01-29 22:57:51,Altri operatori
+2026-01-31,49479,Ecoil,Diesel,1,2.999,2026-01-29 22:57:51,Altri operatori
+2026-01-31,54233,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:01,Pompe Bianche
+2026-01-31,54233,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:01,Pompe Bianche
+2026-01-31,54234,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:09,Pompe Bianche
+2026-01-31,54234,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:09,Pompe Bianche
+2026-01-31,54235,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:07,Pompe Bianche
+2026-01-31,54235,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:07,Pompe Bianche
+2026-02-01,24344,Pompe Bianche,Benzina,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-02-01,24344,Pompe Bianche,Diesel,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-02-01,48837,Esso,Benzina,1,2.999,2026-01-29 22:58:15,Esso
+2026-02-01,48837,Esso,Diesel,1,2.999,2026-01-29 22:58:15,Esso
+2026-02-01,54233,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:01,Pompe Bianche
+2026-02-01,54233,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:01,Pompe Bianche
+2026-02-01,54234,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:09,Pompe Bianche
+2026-02-01,54234,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:09,Pompe Bianche
+2026-02-01,54235,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:07,Pompe Bianche
+2026-02-01,54235,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:07,Pompe Bianche
+2026-02-02,24344,Pompe Bianche,Benzina,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-02-02,24344,Pompe Bianche,Diesel,1,2.999,2026-01-29 22:58:18,Pompe Bianche
+2026-02-02,48837,Esso,Benzina,1,2.999,2026-01-29 22:58:15,Esso
+2026-02-02,48837,Esso,Diesel,1,2.999,2026-01-29 22:58:15,Esso
+2026-02-02,54233,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:01,Pompe Bianche
+2026-02-02,54233,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:01,Pompe Bianche
+2026-02-02,54234,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:09,Pompe Bianche
+2026-02-02,54234,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:09,Pompe Bianche
+2026-02-02,54235,Pompe Bianche,Benzina,1,2.999,2026-01-30 21:18:07,Pompe Bianche
+2026-02-02,54235,Pompe Bianche,Diesel,1,2.999,2026-01-30 21:18:07,Pompe Bianche
+2026-02-03,48885,Ego,Benzina,1,2.999,2026-02-02 22:47:57,Altri operatori
+2026-02-03,48885,Ego,Diesel,1,2.999,2026-02-02 22:47:57,Altri operatori
+2026-02-03,54233,Pompe Bianche,Benzina,1,2.999,2026-02-03 09:15:15,Pompe Bianche
+2026-02-03,54233,Pompe Bianche,Diesel,1,2.999,2026-02-03 09:15:15,Pompe Bianche
+2026-02-03,54234,Pompe Bianche,Benzina,1,2.999,2026-02-03 09:16:17,Pompe Bianche
+2026-02-03,54234,Pompe Bianche,Diesel,1,2.999,2026-02-03 09:16:17,Pompe Bianche
+2026-02-03,54235,Pompe Bianche,Benzina,1,2.999,2026-02-03 08:50:25,Pompe Bianche
+2026-02-03,54235,Pompe Bianche,Diesel,1,2.999,2026-02-03 08:50:25,Pompe Bianche
+2026-02-04,48885,Ego,Benzina,1,2.999,2026-02-02 22:47:57,Altri operatori
+2026-02-04,48885,Ego,Diesel,1,2.999,2026-02-02 22:47:57,Altri operatori
+2026-02-05,33027,Esso,Benzina,1,2.999,2026-02-04 22:30:41,Esso
+2026-02-05,33027,Esso,Diesel,1,2.999,2026-02-04 22:30:41,Esso
+2026-02-05,50679,Q8,Benzina,1,2.999,2026-02-05 01:55:21,Q8
+2026-02-05,50679,Q8,Diesel,1,2.999,2026-02-05 01:55:21,Q8
+2026-02-06,58886,Smaf,Benzina,1,2.999,2026-02-05 23:54:17,Altri operatori
+2026-02-06,58886,Smaf,Diesel,1,2.999,2026-02-05 23:54:17,Altri operatori
+2026-02-07,49479,Ecoil,Benzina,1,2.999,2026-02-06 23:53:32,Altri operatori
+2026-02-07,49479,Ecoil,Diesel,1,2.999,2026-02-06 23:53:32,Altri operatori
+2026-02-10,24344,Pompe Bianche,Benzina,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-10,24344,Pompe Bianche,Diesel,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-10,48837,Esso,Benzina,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-10,48837,Esso,Diesel,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-11,24344,Pompe Bianche,Benzina,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-11,24344,Pompe Bianche,Diesel,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-11,48837,Esso,Benzina,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-11,48837,Esso,Diesel,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-11,54233,Pompe Bianche,Benzina,1,2.999,2026-02-10 23:51:00,Pompe Bianche
+2026-02-11,54233,Pompe Bianche,Diesel,1,2.999,2026-02-10 23:51:00,Pompe Bianche
+2026-02-12,24344,Pompe Bianche,Benzina,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-12,24344,Pompe Bianche,Diesel,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-12,48837,Esso,Benzina,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-12,48837,Esso,Diesel,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-12,54233,Pompe Bianche,Benzina,1,2.999,2026-02-10 23:51:00,Pompe Bianche
+2026-02-12,54233,Pompe Bianche,Diesel,1,2.999,2026-02-10 23:51:00,Pompe Bianche
+2026-02-13,24344,Pompe Bianche,Benzina,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-13,24344,Pompe Bianche,Diesel,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-13,38157,Costantin,Benzina,1,2.999,2026-02-12 23:47:38,Altri operatori
+2026-02-13,38157,Costantin,Diesel,1,2.999,2026-02-12 23:47:38,Altri operatori
+2026-02-13,48837,Esso,Benzina,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-13,48837,Esso,Diesel,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-14,24344,Pompe Bianche,Benzina,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-14,24344,Pompe Bianche,Diesel,1,2.999,2026-02-09 23:54:10,Pompe Bianche
+2026-02-14,48837,Esso,Benzina,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-14,48837,Esso,Diesel,1,2.999,2026-02-09 23:54:07,Esso
+2026-02-15,24344,Pompe Bianche,Benzina,1,2.999,2026-02-14 23:51:31,Pompe Bianche
+2026-02-15,24344,Pompe Bianche,Diesel,1,2.999,2026-02-14 23:51:31,Pompe Bianche
+2026-02-15,48837,Esso,Benzina,1,2.999,2026-02-14 23:51:28,Esso
+2026-02-15,48837,Esso,Diesel,1,2.999,2026-02-14 23:51:28,Esso
+2026-02-16,24344,Pompe Bianche,Benzina,1,2.999,2026-02-14 23:51:31,Pompe Bianche
+2026-02-16,24344,Pompe Bianche,Diesel,1,2.999,2026-02-14 23:51:31,Pompe Bianche
+2026-02-16,48837,Esso,Benzina,1,2.999,2026-02-14 23:51:28,Esso
+2026-02-16,48837,Esso,Diesel,1,2.999,2026-02-14 23:51:28,Esso
+2026-02-17,24344,Pompe Bianche,Benzina,1,2.999,2026-02-14 23:51:31,Pompe Bianche
+2026-02-17,24344,Pompe Bianche,Diesel,1,2.999,2026-02-14 23:51:31,Pompe Bianche
+2026-02-17,48837,Esso,Benzina,1,2.999,2026-02-14 23:51:28,Esso
+2026-02-17,48837,Esso,Diesel,1,2.999,2026-02-14 23:51:28,Esso
+2026-02-20,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-20,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-20,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-20,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-21,49479,Ecoil,Benzina,1,2.999,2026-02-21 00:02:48,Altri operatori
+2026-02-21,49479,Ecoil,Diesel,1,2.999,2026-02-21 00:02:48,Altri operatori
+2026-02-21,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-21,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-21,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-21,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-22,34287,Pompe Bianche,Benzina,1,2.999,2026-02-21 23:44:43,Pompe Bianche
+2026-02-22,34287,Pompe Bianche,Diesel,1,2.999,2026-02-21 23:44:43,Pompe Bianche
+2026-02-22,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-22,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-22,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-22,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-23,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-23,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-23,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-23,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-24,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-24,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-24,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-24,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-24,54420,Pompe Bianche,Benzina,1,2.999,2026-02-23 23:35:54,Pompe Bianche
+2026-02-24,54420,Pompe Bianche,Diesel,1,2.999,2026-02-23 23:35:54,Pompe Bianche
+2026-02-25,13829,Api-Ip,Benzina,1,2.999,2026-02-25 00:01:40,Api-Ip
+2026-02-25,13829,Api-Ip,Diesel,1,2.999,2026-02-25 00:01:40,Api-Ip
+2026-02-25,13833,Q8,Benzina,1,2.999,2026-02-25 00:01:43,Q8
+2026-02-25,13833,Q8,Diesel,1,2.999,2026-02-25 00:01:43,Q8
+2026-02-25,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-25,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-25,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-25,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-25,56386,Api-Ip,Benzina,1,2.999,2026-02-24 23:56:16,Api-Ip
+2026-02-25,56386,Api-Ip,Diesel,1,2.999,2026-02-24 23:56:16,Api-Ip
+2026-02-26,13833,Q8,Benzina,1,2.999,2026-02-25 00:01:43,Q8
+2026-02-26,13833,Q8,Diesel,1,2.999,2026-02-25 00:01:43,Q8
+2026-02-26,48885,Ego,Benzina,1,2.999,2026-02-25 23:34:24,Altri operatori
+2026-02-26,48885,Ego,Diesel,1,2.999,2026-02-25 23:34:24,Altri operatori
+2026-02-26,54233,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-26,54233,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:22,Pompe Bianche
+2026-02-26,54234,Pompe Bianche,Benzina,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-26,54234,Pompe Bianche,Diesel,1,2.999,2026-02-19 23:58:25,Pompe Bianche
+2026-02-27,13833,Q8,Benzina,1,2.999,2026-02-25 00:01:43,Q8
+2026-02-27,13833,Q8,Diesel,1,2.999,2026-02-25 00:01:43,Q8
+2026-03-04,48837,Esso,Benzina,1,2.999,2026-03-03 23:15:58,Esso
+2026-03-04,48837,Esso,Diesel,1,2.999,2026-03-03 23:15:58,Esso
+2026-03-05,48885,Ego,Benzina,1,2.999,2026-03-04 22:23:00,Altri operatori
+2026-03-05,48885,Ego,Diesel,1,2.999,2026-03-04 22:23:00,Altri operatori
+2026-03-10,53734,Smaf,Benzina,1,2.999,2026-03-09 22:17:02,Altri operatori
+2026-03-10,53734,Smaf,Diesel,1,2.999,2026-03-09 22:17:02,Altri operatori
+2026-03-14,55045,Esso,Diesel,1,2.999,2026-03-13 17:13:56,Esso
+2026-03-14,57537,Agip Eni,Diesel,1,2.924,2026-03-14 00:57:15,Agip Eni
+2026-03-15,34287,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:02,Pompe Bianche
+2026-03-15,34287,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:02,Pompe Bianche
+2026-03-15,49922,Esso,Benzina,1,2.999,2026-03-14 23:58:26,Esso
+2026-03-15,49922,Esso,Diesel,1,2.999,2026-03-14 23:58:26,Esso
+2026-03-15,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-15,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-15,54234,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-15,54234,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-15,54235,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:05,Pompe Bianche
+2026-03-15,54235,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:05,Pompe Bianche
+2026-03-15,55045,Esso,Diesel,1,2.999,2026-03-13 17:13:56,Esso
+2026-03-16,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-16,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-16,54234,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-16,54234,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-16,54235,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:05,Pompe Bianche
+2026-03-16,54235,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:05,Pompe Bianche
+2026-03-16,55045,Esso,Diesel,1,2.999,2026-03-13 17:13:56,Esso
+2026-03-17,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-17,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-17,54234,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-17,54234,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-18,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-18,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-18,54234,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-18,54234,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:58:08,Pompe Bianche
+2026-03-19,48837,Esso,Benzina,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-19,48837,Esso,Diesel,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-19,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-19,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-20,25514,Esso,Diesel,1,2.955,2026-03-20 06:39:48,Esso
+2026-03-20,48837,Esso,Benzina,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-20,48837,Esso,Diesel,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-20,51439,Esso,Diesel,1,2.985,2026-03-20 07:17:21,Esso
+2026-03-20,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-20,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-21,25514,Esso,Diesel,1,2.955,2026-03-20 06:39:48,Esso
+2026-03-21,48837,Esso,Benzina,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-21,48837,Esso,Diesel,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-21,52891,Api-Ip,Diesel,1,2.999,2026-03-20 18:34:16,Api-Ip
+2026-03-21,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-21,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-22,25514,Esso,Diesel,1,2.955,2026-03-20 06:39:48,Esso
+2026-03-22,48837,Esso,Benzina,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-22,48837,Esso,Diesel,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-22,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-22,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-23,48837,Esso,Benzina,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-23,48837,Esso,Diesel,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-23,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-23,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-24,48837,Esso,Benzina,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-24,48837,Esso,Diesel,1,2.999,2026-03-18 23:01:32,Esso
+2026-03-24,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-24,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-25,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-25,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-26,54233,Pompe Bianche,Benzina,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-26,54233,Pompe Bianche,Diesel,1,2.999,2026-03-14 23:57:59,Pompe Bianche
+2026-03-28,48885,Ego,Benzina,1,2.999,2026-03-27 23:52:12,Altri operatori
+2026-03-28,48885,Ego,Diesel,1,2.999,2026-03-27 23:52:12,Altri operatori
+2026-03-30,61468,Pompe Bianche,Benzina,1,2.999,2026-03-30 00:11:13,Pompe Bianche
+2026-03-30,61468,Pompe Bianche,Diesel,1,2.999,2026-03-30 00:11:13,Pompe Bianche
+2026-03-31,54544,Api-Ip,Benzina,1,2.999,2026-03-30 23:24:48,Api-Ip
+2026-03-31,54544,Api-Ip,Diesel,1,2.999,2026-03-30 23:24:48,Api-Ip
+2026-04-05,28017,Api-Ip,Diesel,1,2.917,2026-04-04 12:47:51,Api-Ip
+2026-04-06,28017,Api-Ip,Diesel,1,2.917,2026-04-04 12:47:51,Api-Ip
+2026-04-07,28017,Api-Ip,Diesel,1,2.917,2026-04-04 12:47:51,Api-Ip
+2026-04-08,28017,Api-Ip,Diesel,1,2.917,2026-04-04 12:47:51,Api-Ip
+2026-04-09,48837,Esso,Benzina,1,2.999,2026-04-08 23:53:36,Esso
+2026-04-09,48837,Esso,Diesel,1,2.999,2026-04-08 23:53:36,Esso
+2026-04-09,48885,Ego,Benzina,1,2.999,2026-04-08 23:54:00,Altri operatori
+2026-04-09,48885,Ego,Diesel,1,2.999,2026-04-08 23:54:00,Altri operatori
+2026-04-18,33311,Api-Ip,Diesel,1,2.99,2026-04-17 17:08:10,Api-Ip
+2026-04-25,56394,Api-Ip,Diesel,1,2.999,2026-04-24 19:34:21,Api-Ip
+2026-04-26,56394,Api-Ip,Diesel,1,2.999,2026-04-24 19:34:21,Api-Ip
+2026-04-27,56394,Api-Ip,Diesel,1,2.999,2026-04-24 19:34:21,Api-Ip
+2026-04-28,56394,Api-Ip,Diesel,1,2.999,2026-04-24 19:34:21,Api-Ip
+2026-05-01,37473,Pompe Bianche,Diesel,1,2.934,2026-05-01 00:52:22,Pompe Bianche
+2026-05-01,62981,Q8,Diesel,1,2.934,2026-05-01 01:40:13,Q8
+2026-05-08,61595,Esso,Diesel,1,2.999,2026-05-08 07:56:20,Esso
+2026-05-09,61595,Esso,Diesel,1,2.999,2026-05-08 07:56:20,Esso
+2026-05-10,61595,Esso,Diesel,1,2.999,2026-05-09 08:16:48,Esso
+2026-05-11,61595,Esso,Diesel,1,2.999,2026-05-11 07:50:45,Esso
+2026-05-12,61595,Esso,Diesel,1,2.999,2026-05-12 07:53:15,Esso
+2026-05-16,29436,Esso,Diesel,1,2.989,2026-05-16 06:53:42,Esso
+2026-05-17,29436,Esso,Diesel,1,2.989,2026-05-16 06:53:42,Esso
+2026-05-18,29436,Esso,Diesel,1,2.989,2026-05-16 06:53:42,Esso
+2026-05-19,29436,Esso,Diesel,1,2.989,2026-05-16 06:53:42,Esso
+2026-05-19,58484,Api-Ip,Benzina,1,2.919,2026-05-18 15:26:45,Api-Ip
+2026-05-20,29436,Esso,Diesel,1,2.989,2026-05-19 19:46:52,Esso
+2026-05-20,58484,Api-Ip,Benzina,1,2.919,2026-05-18 15:26:45,Api-Ip
+2026-05-21,29436,Esso,Diesel,1,2.989,2026-05-19 19:46:52,Esso
+2026-05-21,58484,Api-Ip,Benzina,1,2.919,2026-05-18 15:26:45,Api-Ip
+2026-05-21,59536,Esso,Diesel,1,2.979,2026-05-20 10:30:03,Esso
+2026-05-22,29436,Esso,Diesel,1,2.989,2026-05-19 19:46:52,Esso
+2026-05-30,58902,Api-Ip,Diesel,1,2.999,2026-05-30 00:33:56,Api-Ip
+2026-05-31,58902,Api-Ip,Diesel,1,2.999,2026-05-30 00:33:56,Api-Ip
+2026-06-03,59279,Agip Eni,Diesel,1,2.989,2026-06-03 07:50:45,Agip Eni
+2026-06-04,59279,Agip Eni,Diesel,1,2.989,2026-06-03 07:50:45,Agip Eni
+2026-06-05,43984,ICM,Diesel,1,2.989,2026-06-05 07:34:55,Altri operatori
+2026-06-05,59279,Agip Eni,Diesel,1,2.989,2026-06-03 07:50:45,Agip Eni
+2026-06-06,43984,ICM,Diesel,1,2.989,2026-06-05 07:34:55,Altri operatori
+2026-06-06,59279,Agip Eni,Diesel,1,2.989,2026-06-03 07:50:45,Agip Eni
+2026-06-07,43984,ICM,Diesel,1,2.989,2026-06-05 07:34:55,Altri operatori
+2026-06-07,59279,Agip Eni,Diesel,1,2.989,2026-06-06 11:55:37,Agip Eni
+2026-06-08,43984,ICM,Diesel,1,2.989,2026-06-08 07:04:18,Altri operatori
+2026-06-09,54763,Q8,Diesel,1,2.959,2026-06-08 10:25:23,Q8
+2026-06-10,54763,Q8,Diesel,1,2.959,2026-06-09 09:46:06,Q8
+2026-06-11,54763,Q8,Diesel,1,2.959,2026-06-09 09:46:06,Q8
+2026-06-17,45627,Agip Eni,Diesel,1,2.984,2026-06-16 16:53:58,Agip Eni
+2026-06-18,45627,Agip Eni,Diesel,1,2.984,2026-06-16 16:53:58,Agip Eni
+2026-06-19,45627,Agip Eni,Diesel,1,2.984,2026-06-16 16:53:58,Agip Eni
+2026-06-20,45627,Agip Eni,Diesel,1,2.984,2026-06-16 16:53:58,Agip Eni
+2026-06-21,45627,Agip Eni,Diesel,1,2.984,2026-06-16 16:53:58,Agip Eni
+2026-06-22,45627,Agip Eni,Diesel,1,2.984,2026-06-22 07:28:38,Agip Eni
+2026-06-23,45627,Agip Eni,Diesel,1,2.914,2026-06-22 18:43:08,Agip Eni
+2026-06-24,45627,Agip Eni,Diesel,1,2.914,2026-06-22 18:43:08,Agip Eni
+2026-06-25,45627,Agip Eni,Diesel,1,2.914,2026-06-22 18:43:08,Agip Eni
+2026-06-26,45627,Agip Eni,Diesel,1,2.914,2026-06-22 18:43:08,Agip Eni
+2026-06-27,45627,Agip Eni,Diesel,1,2.914,2026-06-22 18:43:08,Agip Eni
+2026-06-28,45627,Agip Eni,Diesel,1,2.914,2026-06-22 18:43:08,Agip Eni
+2026-06-29,45627,Agip Eni,Diesel,1,2.914,2026-06-29 07:58:42,Agip Eni
+2026-06-30,19954,Api-Ip,Diesel,1,2.969,2026-06-30 06:48:37,Api-Ip

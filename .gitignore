@@ -1,0 +1,16 @@
+# Ambiente Python
+.venv/
+__pycache__/
+
+# Dati grezzi MIMIT (circa 1,3 GB) e dati intermedi rigenerabili
+Anagrafica primo trimestre/
+Anagrafica secondo trimestre/
+Prezzi primo trimestre/
+Prezzi secondo trimestre/
+dati_intermedi/
+
+.DS_Store
+
+# File di blocco di Office/LibreOffice
+.~lock.*#
+~$*
